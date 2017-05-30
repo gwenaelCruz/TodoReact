@@ -12,43 +12,23 @@ import {
     Text,
     View
 } from 'react-native';
-import mainStyle from './src/styles/MainStyle'
+import mainStyle from './src/styles/MainStyle';
+import TodoView from './src/layouts/TodoView';
 
-class ToolBar extends Component {
-    render() {
-    return (
-        <View style={mainStyle.toolbar}>
-            <Text>
-                TodoReact
-            </Text>
-        </View>
-    );
-  }
-}
-
-class TodoList extends Component {
-    constructor(props) {
-        super(props)
-        const dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-        this.state = {
-            dataSource: dataSource.cloneWithRows([
-                'Test1', 'Test2'
-            ])
-        };
-  }
-
+class App extends Component {
     render() {
         return (
             <View>
-                <ListView
-                    dataSource={ this.state.dataSource }
-                    renderRow={ (rowData) => <Text>{rowData}</Text> }
-                />
+                <View style={mainStyle.toolbar}>
+                    <Text style={mainStyle.title }>
+                        TodoReact
+                    </Text>
+                </View>
+                <TodoView/>
             </View>
         );
   }
 }
 
 
-AppRegistry.registerComponent('TodoReact', () => ToolBar);
-//AppRegistry.registerComponent('TodoReact', () => TodoList);
+AppRegistry.registerComponent('TodoReact', () => App);
