@@ -12,8 +12,30 @@ import {
     Text,
     View
 } from 'react-native';
+const MK = require('react-native-material-kit');
+const {
+    MKButton,
+    MKColor
+} = MK;
 import mainStyle from './src/styles/MainStyle';
 import TodoView from './src/layouts/TodoView';
+
+const Fab = MKButton.coloredFab()
+    .withBackgroundColor(MKColor.Indigo)
+    .build();
+
+class AddTodoButton extends Component {
+    handleClick() {
+    }
+
+    render() {
+        return(
+            <Fab onPress={(e) => this.handleClick(e)}>
+                <Text> + </Text>
+            </Fab>
+        );
+    }
+}
 
 class App extends Component {
     render() {
@@ -25,6 +47,7 @@ class App extends Component {
                     </Text>
                 </View>
                 <TodoView/>
+                <AddTodoButton/>
             </View>
         );
   }
