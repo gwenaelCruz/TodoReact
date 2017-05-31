@@ -17,8 +17,10 @@ const {
     MKButton,
     MKColor
 } = MK;
-import mainStyle from './src/styles/MainStyle';
-import TodoView from './src/layouts/TodoView';
+import mainStyle from './app/styles/MainStyle';
+import TodoView from './app/layouts/TodoView';
+
+const app = require('./app/index');
 
 const Fab = MKButton.coloredFab()
     .withBackgroundColor(MKColor.Indigo)

@@ -20,17 +20,8 @@ const mainStyle = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         backgroundColor: '#FFFFFF',
-    },
-    todoBloc: {
-        height: 50,
-        justifyContent: "flex-start",
-        alignItems: "center",
-        flex: 1,
-        flexDirection: "row",
-        paddingLeft: 15,
-        borderBottomColor: "#bdbdbd",
-        borderBottomWidth: 1
     }
+
 
 });
 

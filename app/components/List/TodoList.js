@@ -1,4 +1,8 @@
 /**
+ * Created by DEVAPPLI on 31/05/2017.
+ */
+
+/**
  * Created by DEVAPPLI on 30/05/2017.
  */
 
@@ -8,7 +12,7 @@ import {
     Text,
     View
 } from 'react-native';
-import Todo from '../classes/Todo';
+import Todo from '../../index';
 import mainStyle from '../styles/MainStyle';
 
 export default class TodoView extends Component {
