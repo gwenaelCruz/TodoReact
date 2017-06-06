@@ -17,39 +17,23 @@ const {
     MKButton,
     MKColor
 } = MK;
-import mainStyle from './app/styles/MainStyle';
-import TodoView from './app/layouts/TodoView';
 
 const app = require('./app/index');
+const {
+    classes,
+    images,
+    routes,
+    settings,
+    styles,
+    layouts
+} = app;
 
-const Fab = MKButton.coloredFab()
-    .withBackgroundColor(MKColor.Indigo)
-    .build();
-
-class AddTodoButton extends Component {
-    handleClick() {
-    }
-
-    render() {
-        return(
-            <Fab onPress={(e) => this.handleClick(e)}>
-                <Text> + </Text>
-            </Fab>
-        );
-    }
-}
 
 class App extends Component {
     render() {
         return (
             <View>
-                <View style={mainStyle.toolbar}>
-                    <Text style={mainStyle.title }>
-                        TodoReact
-                    </Text>
-                </View>
                 <TodoView/>
-                <AddTodoButton/>
             </View>
         );
   }

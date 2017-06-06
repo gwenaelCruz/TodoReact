@@ -12,10 +12,15 @@ import {
     Text,
     View
 } from 'react-native';
-import Todo from '../../index';
-import mainStyle from '../styles/MainStyle';
+const app = require('../../');
+const {
+    Todo,
+    styles
+} = app;
 
-export default class TodoView extends Component {
+const TodoListStyles = require('./styles');
+
+export default class TodoList extends Component {
     constructor(props) {
         super(props);
         const dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
@@ -33,7 +38,7 @@ export default class TodoView extends Component {
                 <ListView
                     dataSource={ this.state.dataSource }
                     renderRow={ (rowData) =>
-                        <View style={mainStyle.todoBloc}>
+                        <View style={TodoListStyles.todoBloc}>
                             <Text>{rowData.title}</Text>
                         </View>
                     }

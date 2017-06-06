@@ -5,13 +5,7 @@
 import React, { Component } from 'react';
 import { StyleSheet } from "react-native";
 
-const mainStyle = StyleSheet.create({
-    toolbar: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#283593',
-        height: 55
-    },
+const styles = StyleSheet.create({
     title: {
         color: '#FFFFFF',
         fontSize: 18
@@ -25,4 +19,4 @@ const mainStyle = StyleSheet.create({
 
 });
 
-export default mainStyle;
+export default styles;
