@@ -8,19 +8,25 @@
 
 import React, { Component } from 'react';
 import { StyleSheet } from "react-native";
+import Colors from './colors';
 
 const styles = StyleSheet.create({
+    toolbar: {
+
+    },
     title: {
-        color: '#FFFFFF',
+        color: Colors.white,
         fontSize: 18
     },
     container: {
         flex: 1,
         justifyContent: 'center',
-        backgroundColor: '#FFFFFF',
+        backgroundColor: Colors.white,
+    },
+
+    fixedActionButton: {
+
     }
-
-
 });
 
 export default styles;

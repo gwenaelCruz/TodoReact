@@ -12,13 +12,8 @@ import {
     Text,
     View
 } from 'react-native';
-const app = require('../../');
-const {
-    Todo,
-    styles
-} = app;
 
-const TodoListStyles = require('./styles');
+import Todo from '../classes/Todo';
 
 export default class TodoList extends Component {
     constructor(props) {
@@ -38,7 +33,7 @@ export default class TodoList extends Component {
                 <ListView
                     dataSource={ this.state.dataSource }
                     renderRow={ (rowData) =>
-                        <View style={TodoListStyles.todoBloc}>
+                        <View>
                             <Text>{rowData.title}</Text>
                         </View>
                     }
@@ -46,4 +41,4 @@ export default class TodoList extends Component {
             </View>
         )
     }
-}
+};
