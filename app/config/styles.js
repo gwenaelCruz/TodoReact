@@ -1,11 +1,3 @@
-/**
- * Created by DEVAPPLI on 31/05/2017.
- */
-
-/**
- * Created by DEVAPPLI on 30/05/2017.
- */
-
 import React, { Component } from 'react';
 import { StyleSheet } from "react-native";
 const MK = require('react-native-material-kit');
@@ -35,6 +27,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderBottomWidth: 1,
         borderBottomColor: Colors.lightgrey
+    },
+    listItemTitle: {
+        fontWeight: 'bold',
+        left: 10
     },
     fixedActionButton: {
         bottom: 1,

@@ -1,10 +1,3 @@
-/**
- * Created by DEVAPPLI on 31/05/2017.
- */
-
-/**
- * Created by DEVAPPLI on 30/05/2017.
- */
 
 import React, { Component } from 'react';
 import {
@@ -35,7 +28,7 @@ export default class TodoList extends Component {
                     dataSource={ this.state.dataSource }
                     renderRow={ (rowData) =>
                         <View style={styles.listItem}>
-                            <Text>{rowData.title}</Text>
+                            <Text style={styles.listItemTitle}>{rowData.title}</Text>
                         </View>
                     }
                 />

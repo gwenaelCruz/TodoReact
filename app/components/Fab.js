@@ -1,6 +1,3 @@
-/**
- * Created by DEVAPPLI on 06/06/2017.
- */
 
 import React, { Component } from 'react';
 import {

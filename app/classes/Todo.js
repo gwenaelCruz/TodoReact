@@ -1,6 +1,3 @@
-/**
- * Created by DEVAPPLI on 30/05/2017.
- */
 
 export default class Todo {
     constructor(title, description) {
