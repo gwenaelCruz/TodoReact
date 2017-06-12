@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 
 import Todo from '../classes/Todo';
+import styles from '../config/styles';
 
 export default class TodoList extends Component {
     constructor(props) {
@@ -33,7 +34,7 @@ export default class TodoList extends Component {
                 <ListView
                     dataSource={ this.state.dataSource }
                     renderRow={ (rowData) =>
-                        <View>
+                        <View style={styles.listItem}>
                             <Text>{rowData.title}</Text>
                         </View>
                     }

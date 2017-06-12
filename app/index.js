@@ -3,15 +3,12 @@
  */
 
 // Import every other, entry point of the application
-import Component from 'react';
+import React, { Component } from 'react';
 import TodoView from './layouts/TodoView';
 
-class App extends Component {
-    render() {
-        return(
-            <TodoView />
-        );
-    }
-}
+
+const App = () => (
+    <TodoView/>
+);
 
 export default App;

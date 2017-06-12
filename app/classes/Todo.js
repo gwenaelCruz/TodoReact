@@ -9,27 +9,27 @@ export default class Todo {
         this._ended = 0;
     }
 
-    getTitle() {
+    get title() {
         return this._title
     }
 
-    setTitle(title) {
+    set title(title) {
         this._title = title
     }
 
-    getDescription() {
+    get description() {
         return this._description
     }
 
-    setDescription(description) {
+    set description(description) {
         this._description = description
     }
 
-    getEnded() {
+    get ended() {
         return this._ended
     }
 
-    setEnded(ended) {
+    set ended(ended) {
         this._ended = ended
     }
 

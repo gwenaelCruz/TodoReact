@@ -3,6 +3,7 @@
  */
 
 import React, { Component } from 'react';
+import { Text } from 'react-native';
 const MK = require('react-native-material-kit');
 const {
     MKButton,
