@@ -30,7 +30,7 @@ export default class TodoList extends Component {
 
     render() {
         return(
-            <View>
+            <View style={styles.container}>
                 <ListView
                     dataSource={ this.state.dataSource }
                     renderRow={ (rowData) =>

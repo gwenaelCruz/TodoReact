@@ -16,7 +16,7 @@ import Colors from './colors';
 
 const styles = StyleSheet.create({
     toolbar: {
-        height: 50,
+        height: 60,
         backgroundColor: MKColor.Indigo,
         justifyContent: 'center',
         alignItems: 'center'
@@ -26,18 +26,21 @@ const styles = StyleSheet.create({
         fontSize: 18
     },
     container: {
-        flex: 1,
+        alignSelf: 'stretch',
         justifyContent: 'center',
         backgroundColor: Colors.white,
     },
     listItem: {
-        height: 40,
+        height: 50,
         justifyContent: 'center',
         borderBottomWidth: 1,
-        borderBottomColor: MKColor.Grey
+        borderBottomColor: Colors.lightgrey
     },
     fixedActionButton: {
-
+        bottom: 1,
+        right: 5,
+        alignSelf: 'flex-end',
+        flex: 1
     }
 });
 

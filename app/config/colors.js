@@ -3,5 +3,6 @@
  */
 
 export default Colors = {
-    white: '#FFFFFF'
+    white: '#FFFFFF',
+    lightgrey: '#BDBDBD'
 };

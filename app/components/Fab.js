@@ -3,7 +3,11 @@
  */
 
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import {
+    View,
+    Text,
+    Image
+} from 'react-native';
 const MK = require('react-native-material-kit');
 const {
     MKButton,
@@ -11,10 +15,7 @@ const {
 } = MK;
 
 import styles from '../config/styles';
-
-const Fab = MKButton.coloredFab()
-    .withBackgroundColor(MKColor.Indigo)
-    .build();
+import images from '../config/images';
 
 class FabAdd extends Component {
     handleClick() {
@@ -22,9 +23,15 @@ class FabAdd extends Component {
 
     render() {
         return(
-            <Fab onPress={(e) => this.handleClick(e)} style={styles.fixedActionButton}>
-                <Text> + </Text>
-            </Fab>
+            <View style={styles.fixedActionButton}>
+                <MKButton
+                    fab={true}
+                    backgroundColor={MKColor.Indigo}
+                    onPress={(e) => this.handleClick()}
+                >
+                    <Image source={ images.icons.plus } />
+                </MKButton>
+            </View>
         );
     }
 }
