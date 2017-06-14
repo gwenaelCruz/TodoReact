@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import TodoView from './layouts/TodoView';
 
 
-const App = () => (
+const App = (props) => (
     <TodoView/>
 );
 

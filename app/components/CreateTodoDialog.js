@@ -5,10 +5,20 @@ import {
     Text,
     View
 } from 'react-native';
+const MK = require('react-native-material-kit');
+const {
+    MKTextField
+} = MK;
+
+const TitleInput = MKTextField.textfieldWithFloatingLabel()
+    .withPlaceholder('Title')
+    .build();
 
 class CreateTodoDialog extends Component {
     state = {
         modalVisible: false,
+        title: '',
+        description: ''
     }
 
     setDialogVisible(visible) {
@@ -23,7 +33,9 @@ class CreateTodoDialog extends Component {
                 visible={this.state.modalVisible}
                 onRequestClose={() => { }}
             >
-                <Text>Hello !</Text>
+                <TitleInput
+                    onTextChange={(title) => this.state.title = title}
+                />
             </Modal>
         );
     }
