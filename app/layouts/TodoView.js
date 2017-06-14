@@ -16,6 +16,7 @@ export default class TodoView extends Component {
                 <Toolbar/>
                 <TodoList/>
                 <FabAdd/>
+                <CreateTodoDialog/>
             </View>
         );
     }

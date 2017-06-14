@@ -17,7 +17,12 @@ class CreateTodoDialog extends Component {
 
     render() {
         return (
-            <Modal>
+            <Modal
+                animationType={"slide"}
+                transparent={false}
+                visible={this.state.modalVisible}
+                onRequestClose={() => { }}
+            >
                 <Text>Hello !</Text>
             </Modal>
         );
