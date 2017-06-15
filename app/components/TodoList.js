@@ -24,12 +24,18 @@ class TodoListView extends Component {
         //Alert.alert(rowData.title);
     }
 
+    componentWillReceiveProps(props) {
+        this.setState({
+           dataSource: this.state.dataSource.cloneWithRows(props.todos)
+        });
+    }
+
     render() {
         return(
             <View style={styles.container}>
                 <ListView
-                dataSource={ this.state.dataSource }
-                renderRow={ (rowData) =>
+                    dataSource={ this.state.dataSource }
+                    renderRow={ (rowData) =>
                         <TouchableHighlight
                             onPress={this._onPressTodo.bind(this, rowData)}
                             underlayColor="grey"

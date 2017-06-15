@@ -18,9 +18,10 @@ export default function todoReducer(state = initialState, action) {
     switch(action.type) {
 
         case constants.ADD_TODO:
-            return state.todos.push(
-                new Todo(action.title, action.description)
-            );
+            return {
+                ...state,
+                todos: state.todos.concat(new Todo(action.title, action.description))
+            };
 
         default:
             return state
