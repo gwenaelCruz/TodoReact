@@ -5,6 +5,8 @@ import {
     Text,
     View
 } from 'react-native';
+import { connect } from 'react-redux';
+import { addTodo } from '../actions/TodoActions';
 const MK = require('react-native-material-kit');
 const {
     MKTextField
@@ -14,7 +16,7 @@ const TitleInput = MKTextField.textfieldWithFloatingLabel()
     .withPlaceholder('Title')
     .build();
 
-class CreateTodoDialog extends Component {
+class Dialog extends Component {
     state = {
         modalVisible: false,
         title: '',
@@ -40,5 +42,24 @@ class CreateTodoDialog extends Component {
         );
     }
 }
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onSubmit: (title, description) => {
+            dispatch(addTodo(title, description))
+        }
+    }
+};
+
+const mapStateProps = (state) => {
+    return {
+        visible: state.visible
+    }
+};
+
+const CreateTodoDialog = connect(
+    mapStateProps,
+    mapDispatchToProps
+)(Dialog);
 
 export default CreateTodoDialog;

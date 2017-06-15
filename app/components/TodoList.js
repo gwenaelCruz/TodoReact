@@ -6,34 +6,25 @@ import {
     Text,
     TouchableHighlight,
     View,
-
 } from 'react-native';
-
-import Todo from '../classes/Todo';
+import { connect } from 'react-redux';
 import styles from '../config/styles';
 
-export default class TodoList extends Component {
+class TodoListView extends Component {
     constructor(props) {
         super(props);
         const dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         this.state = {
-            dataSource: dataSource.cloneWithRows([
-                new Todo('Test1', ''),
-                new Todo('Test2', ''),
-                new Todo('Test3', ''),
-                new Todo('Test4', ''),
-                new Todo('Test5', ''),
-                new Todo('Test6', ''),
-                new Todo('Test7', ''),
-                new Todo('Test8', ''),
-            ])
+            dataSource: dataSource.cloneWithRows(this.props.todos)
         };
     }
-
+    
     _onPressTodo(rowData) {
         //Todo: Open a new view to show item
         //Alert.alert(rowData.title);
     }
+
+
 
     render() {
         return(
@@ -52,7 +43,20 @@ export default class TodoList extends Component {
                     }
                 />
             </View>
-
         )
     }
 };
+
+const mapStateProps= (state) => {
+    return {
+        todos: state.todoReducer.todos
+    }
+};
+
+const TodoList = connect(
+    mapStateProps
+)(TodoListView);
+
+export default TodoList;
+
+
