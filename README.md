@@ -1,5 +1,5 @@
 
-##About
+## About
 Sample project, a todo application using React Native
 and Redux.
 
