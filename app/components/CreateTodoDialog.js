@@ -17,27 +17,19 @@ const TitleInput = MKTextField.textfieldWithFloatingLabel()
     .build();
 
 class Dialog extends Component {
-    state = {
-        modalVisible: false,
-        title: '',
-        description: ''
-    }
-
-    setDialogVisible(visible) {
-        this.setState({modalVisible: visible});
-    }
 
     render() {
         return (
             <Modal
                 animationType={"slide"}
                 transparent={false}
-                visible={this.state.modalVisible}
+                visible={this.props.visible}
                 onRequestClose={() => { }}
             >
                 <TitleInput
-                    onTextChange={(title) => this.state.title = title}
+                    onTextChange={(title) => this.props.title = title}
                 />
+
             </Modal>
         );
     }
@@ -53,7 +45,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateProps = (state) => {
     return {
-        visible: state.visible
+        visible: state.dialogReducer.visible
     }
 };
 

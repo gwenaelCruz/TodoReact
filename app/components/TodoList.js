@@ -18,13 +18,11 @@ class TodoListView extends Component {
             dataSource: dataSource.cloneWithRows(this.props.todos)
         };
     }
-    
+
     _onPressTodo(rowData) {
         //Todo: Open a new view to show item
         //Alert.alert(rowData.title);
     }
-
-
 
     render() {
         return(

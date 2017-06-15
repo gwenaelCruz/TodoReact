@@ -5,18 +5,18 @@ import {
     Text,
     Image
 } from 'react-native';
+import { connect } from 'react-redux';
 const MK = require('react-native-material-kit');
 const {
     MKButton,
     MKColor
 } = MK;
 
+import { toggleTodoDialog } from '../actions/DialogAction';
 import styles from '../config/styles';
 import images from '../config/images';
 
-class FabAdd extends Component {
-    handleClick() {
-    }
+class FabAddView extends Component {
 
     render() {
         return(
@@ -24,7 +24,7 @@ class FabAdd extends Component {
                 <MKButton
                     fab={true}
                     backgroundColor={MKColor.Indigo}
-                    onPress={(e) => this.handleClick()}
+                    onPress={(e) => this.props.handleClick()}
                 >
                     <Image source={ images.icons.plus } />
                 </MKButton>
@@ -32,5 +32,18 @@ class FabAdd extends Component {
         );
     }
 }
+
+const mapDispatchProps = (dispatch) => {
+    return {
+        handleClick: () => {
+            dispatch(toggleTodoDialog(true))
+        }
+    }
+};
+
+const FabAdd = connect(
+    null,
+    mapDispatchProps
+)(FabAddView);
 
 export default FabAdd;
