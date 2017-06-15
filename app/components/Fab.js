@@ -20,13 +20,14 @@ class FabAddView extends Component {
 
     render() {
         return(
-            <View style={styles.fixedActionButton}>
+            <View style={styles.fixedActionButtonContainer}>
                 <MKButton
                     fab={true}
                     backgroundColor={MKColor.Indigo}
                     onPress={(e) => this.props.handleClick()}
+                    style={styles.fixedActionButton}
                 >
-                    <Image source={ images.icons.plus } />
+                    <Image source={ images.icons.plus } style={styles.fixedActionIcon} />
                 </MKButton>
             </View>
         );

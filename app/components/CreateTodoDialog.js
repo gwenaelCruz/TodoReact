@@ -15,7 +15,10 @@ const {
     MKColor
 } = MK;
 
+import styles from '../config/styles';
+
 const MaterialInput = MKTextField.textfieldWithFloatingLabel()
+    .withStyle({width: '75%', marginLeft: 20})
     .build();
 
 const CancelButton = MKButton.flatButton()
@@ -52,27 +55,32 @@ class Dialog extends Component {
         return (
             <Modal
                 animationType={"slide"}
-                transparent={false}
+                transparent={true}
                 visible={this.props.visible}
+                hardwareAccelerated={true}
                 onRequestClose={() => { }}
             >
-                <MaterialInput
-                    placeholder="Title"
-                    onChangeText={(title) => this.state.title = title}
-                    onSubmitEditing={() => this.refs.DescriptionInput.focus()}
-                />
-                <MaterialInput
-                    ref="DescriptionInput"
-                    placeholder="Description"
-                    onChangeText={(description) => this.state.description = description}
-                    multiline={true}
-                />
-                <CancelButton
-                    onPress={(e) => this.props.onCancel()}
-                />
-                <CreateButton
-                    onPress={(e) => this._handleSubmit()}
-                />
+                <View style={styles.dialogContainer}>
+                    <MaterialInput
+                        placeholder="Title"
+                        onChangeText={(title) => this.state.title = title}
+                        onSubmitEditing={() => this.refs.DescriptionInput.focus()}
+                    />
+                    <MaterialInput
+                        ref="DescriptionInput"
+                        placeholder="Description"
+                        onChangeText={(description) => this.state.description = description}
+                        multiline={true}
+                    />
+                    <View style={styles.dialogButtonsContainer}>
+                        <CancelButton
+                            onPress={(e) => this.props.onCancel()}
+                        />
+                        <CreateButton
+                            onPress={(e) => this._handleSubmit()}
+                        />
+                    </View>
+                </View>
             </Modal>
         );
     }

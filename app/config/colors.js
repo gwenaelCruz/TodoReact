@@ -1,5 +1,6 @@
 
 export default Colors = {
     white: '#FFFFFF',
-    lightgrey: '#BDBDBD'
+    lightgrey: '#BDBDBD',
+    darkIndigo: '#303F9F'
 };

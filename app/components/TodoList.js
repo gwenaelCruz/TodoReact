@@ -35,6 +35,7 @@ class TodoListView extends Component {
             <View style={styles.container}>
                 <ListView
                     dataSource={ this.state.dataSource }
+                    enableEmptySections={true}
                     renderRow={ (rowData) =>
                         <TouchableHighlight
                             onPress={this._onPressTodo.bind(this, rowData)}
