@@ -56,8 +56,9 @@ class TodoListView extends Component {
                             underlayColor="grey"
                         >
                             <View style={styles.listItem}>
-                                <Text style={rowStyle(rowData.ended) }
-                                >{rowData.title}</Text>
+                                <Text style={rowStyle(rowData.ended) }>
+                                    {rowData.title}
+                                </Text>
                             </View>
                         </TouchableHighlight>
                     }
