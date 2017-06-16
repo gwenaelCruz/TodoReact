@@ -18,12 +18,14 @@ export default function todoReducer(state = initialState, action) {
 
         case constants.TOGGLE_TODO_ENDED:
             let todoToChange = state.todos[action.index];
-            todoToChange.ended = action.ended;
+            let newTodo = new Todo(todoToChange.title, todoToChange.description);
+            newTodo.ended = action.ended;
             let todoList = state.todos.slice();
-            todoList[action.index] = todoToChange;
-            return Object.assign({}, state, {
+            todoList[action.index] = newTodo;
+            return {
+                ...state,
                 todos: todoList
-            });
+            };
 
         default:
             return state

@@ -18,7 +18,11 @@ const rowStyle = (ended) => {
 class TodoListView extends Component {
     constructor(props) {
         super(props);
-        const dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+        const dataSource = new ListView.DataSource({rowHasChanged : (r1, r2) => {
+            if(r1.ended != r2.ended) return true;
+            if(r1.title != r2.title) return true;
+            return r1.description != r2.description;
+        }});
         this.state = {
             dataSource: dataSource.cloneWithRows(this.props.todos)
         };
@@ -34,10 +38,9 @@ class TodoListView extends Component {
     }
 
     componentWillReceiveProps(props) {
-        alert(props.todos[0].ended)
-        this.setState({
+        this.setState(state => ({
            dataSource: this.state.dataSource.cloneWithRows(props.todos)
-        });
+        }));
     }
 
     render() {
