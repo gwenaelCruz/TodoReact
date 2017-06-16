@@ -3,7 +3,7 @@ export default class Todo {
     constructor(title, description) {
         this._title = title;
         this._description = description;
-        this._ended = 0;
+        this._ended = false;
     }
 
     get title() {
@@ -29,6 +29,4 @@ export default class Todo {
     set ended(ended) {
         this._ended = ended
     }
-
-    
 }

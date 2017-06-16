@@ -38,6 +38,13 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         left: 10
     },
+    endedTodo: {
+        fontWeight: 'bold',
+        left: 10,
+        textDecorationLine: 'line-through',
+        textDecorationStyle: 'solid',
+        textDecorationColor: Colors.lightgrey
+    },
     fixedActionButtonContainer: {
         bottom: 50,
         right: 20,

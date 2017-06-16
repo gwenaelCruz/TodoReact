@@ -8,7 +8,12 @@ import {
     View,
 } from 'react-native';
 import { connect } from 'react-redux';
+import { toggleTodoEnded } from '../actions/TodoActions';
 import styles from '../config/styles';
+
+const rowStyle = (ended) => {
+    return ended ? styles.endedTodo : styles.listItemTitle;
+};
 
 class TodoListView extends Component {
     constructor(props) {
@@ -24,7 +29,12 @@ class TodoListView extends Component {
         //Alert.alert(rowData.title);
     }
 
+    _onLongPress(rowData, rowId) {
+        this.props.changeState(rowId, !rowData.ended);
+    }
+
     componentWillReceiveProps(props) {
+        alert(props.todos[0].ended)
         this.setState({
            dataSource: this.state.dataSource.cloneWithRows(props.todos)
         });
@@ -36,13 +46,15 @@ class TodoListView extends Component {
                 <ListView
                     dataSource={ this.state.dataSource }
                     enableEmptySections={true}
-                    renderRow={ (rowData) =>
+                    renderRow={ (rowData, sectionID, rowID) =>
                         <TouchableHighlight
                             onPress={this._onPressTodo.bind(this, rowData)}
+                            onLongPress={this._onLongPress.bind(this, rowData, rowID)}
                             underlayColor="grey"
                         >
                             <View style={styles.listItem}>
-                                <Text style={styles.listItemTitle}>{rowData.title}</Text>
+                                <Text style={rowStyle(rowData.ended) }
+                                >{rowData.title}</Text>
                             </View>
                         </TouchableHighlight>
                     }
@@ -52,14 +64,23 @@ class TodoListView extends Component {
     }
 };
 
-const mapStateProps= (state) => {
+const mapStateProps = (state) => {
     return {
         todos: state.todoReducer.todos
     }
 };
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        changeState: (index, ended) => {
+            dispatch(toggleTodoEnded(index, ended))
+        }
+    }
+};
+
 const TodoList = connect(
-    mapStateProps
+    mapStateProps,
+    mapDispatchToProps
 )(TodoListView);
 
 export default TodoList;
