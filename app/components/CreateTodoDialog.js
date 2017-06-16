@@ -1,10 +1,10 @@
 
 import React, { Component } from 'react';
 import {
-    Modal,
     Text,
     View
 } from 'react-native';
+import Overlay from 'react-native-modal-overlay';
 import { connect } from 'react-redux';
 import { addTodo } from '../actions/TodoActions';
 import { toggleTodoDialog } from '../actions/DialogAction';
@@ -53,12 +53,12 @@ class Dialog extends Component {
 
     render() {
         return (
-            <Modal
-                animationType={"slide"}
-                transparent={true}
+            <Overlay
+                animationType={"fade"}
+                closeOnTouchOutside
+                containerStyle={{backgroundColor: 'rgba(0, 0, 0, 0.55)'}}
                 visible={this.props.visible}
-                hardwareAccelerated={true}
-                onRequestClose={() => { }}
+                onClose={() => { this.props.onCancel() }}
             >
                 <View style={styles.dialogContainer}>
                     <MaterialInput
@@ -81,7 +81,7 @@ class Dialog extends Component {
                         />
                     </View>
                 </View>
-            </Modal>
+            </Overlay>
         );
     }
 }

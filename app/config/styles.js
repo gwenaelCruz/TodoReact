@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
         position: 'absolute'
     },
     fixedActionButton: {
+        backgroundColor: MKColor.Indigo,
         height: 55,
         width: 55,
         paddingTop:10,
@@ -54,9 +55,7 @@ const styles = StyleSheet.create({
         width:35
     },
     dialogContainer: {
-        marginTop: 100,
-        alignSelf: 'center',
-        width: '75%',
+        width: '100%',
         backgroundColor: Colors.white
     },
     dialogButtonsContainer: {

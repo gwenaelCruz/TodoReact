@@ -23,7 +23,6 @@ class FabAddView extends Component {
             <View style={styles.fixedActionButtonContainer}>
                 <MKButton
                     fab={true}
-                    backgroundColor={MKColor.Indigo}
                     onPress={(e) => this.props.handleClick()}
                     style={styles.fixedActionButton}
                 >
