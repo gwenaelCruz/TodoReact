@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import { StackNavigator } from 'react-navigation';
 
 import rootReducer from './reducers';
 import TodoView from './layouts/TodoView';

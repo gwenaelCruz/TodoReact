@@ -12,7 +12,7 @@ export default class Toolbar extends Component {
         return (
             <View style={styles.toolbar}>
                 <Text style={styles.title }>
-                    TodoReact
+                    {this.props.title}
                 </Text>
             </View>
         );

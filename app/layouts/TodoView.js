@@ -13,7 +13,7 @@ export default class TodoView extends Component {
     render() {
         return(
             <View>
-                <Toolbar/>
+                <Toolbar title="Todo List" />
                 <TodoList/>
                 <FabAdd/>
                 <CreateTodoDialog/>
