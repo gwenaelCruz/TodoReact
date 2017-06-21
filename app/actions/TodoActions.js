@@ -8,3 +8,10 @@ export function addTodo(title, description) {
     }
 }
 
+export function toggleTodoEnded(index, ended) {
+    return {
+        type: constants.TOGGLE_TODO_ENDED,
+        index: index,
+        ended: ended
+    }
+}

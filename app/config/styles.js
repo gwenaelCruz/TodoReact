@@ -14,9 +14,7 @@ const containerHeight = height - toolbarHeight;
 const styles = StyleSheet.create({
     toolbar: {
         height: toolbarHeight,
-        backgroundColor: MKColor.Indigo,
-        justifyContent: 'center',
-        alignItems: 'center'
+        backgroundColor: MKColor.Indigo
     },
     title: {
         color: Colors.white,
@@ -24,7 +22,6 @@ const styles = StyleSheet.create({
     },
     container: {
         alignSelf: 'stretch',
-        justifyContent: 'center',
         backgroundColor: Colors.white,
         height: containerHeight
     },
@@ -38,12 +35,20 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         left: 10
     },
+    endedTodo: {
+        fontWeight: 'bold',
+        left: 10,
+        textDecorationLine: 'line-through',
+        textDecorationStyle: 'solid',
+        textDecorationColor: Colors.lightgrey
+    },
     fixedActionButtonContainer: {
         bottom: 50,
         right: 20,
         position: 'absolute'
     },
     fixedActionButton: {
+        backgroundColor: MKColor.Indigo,
         height: 55,
         width: 55,
         paddingTop:10,
@@ -54,15 +59,18 @@ const styles = StyleSheet.create({
         width:35
     },
     dialogContainer: {
-        marginTop: 100,
-        alignSelf: 'center',
-        width: '75%',
+        width: '100%',
         backgroundColor: Colors.white
     },
     dialogButtonsContainer: {
         marginTop: 15,
         flexDirection: 'row',
         alignSelf: 'flex-end'
+    },
+    todoDescription: {
+        marginTop: 20,
+        marginLeft: 10,
+        marginRight: 10
     }
 });
 
