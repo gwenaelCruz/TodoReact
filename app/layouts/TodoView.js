@@ -13,7 +13,7 @@ export default class TodoView extends Component {
         return(
             <View>
                 <StatusBar backgroundColor={Colors.darkIndigo} />
-                <TodoList/>
+                <TodoList navigation={this.props.navigation}/>
                 <FabAdd/>
                 <CreateTodoDialog/>
             </View>

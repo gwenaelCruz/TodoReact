@@ -25,12 +25,13 @@ class TodoListView extends Component {
             return r1.description != r2.description;
         }});
         this.state = {
-            dataSource: dataSource.cloneWithRows(this.props.todos)
+            dataSource: dataSource.cloneWithRows(this.props.todos),
+            navigation: this.props.navigation
         };
     }
 
     _onPressTodo(todo) {
-        this.props.navigation.navigate('Detail', {...todo})
+        this.state.navigation.navigate('Detail', todo)
     }
 
     _onLongPress(rowData, rowId) {

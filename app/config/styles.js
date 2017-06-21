@@ -14,9 +14,7 @@ const containerHeight = height - toolbarHeight;
 const styles = StyleSheet.create({
     toolbar: {
         height: toolbarHeight,
-        backgroundColor: MKColor.Indigo,
-        justifyContent: 'center',
-        alignItems: 'center'
+        backgroundColor: MKColor.Indigo
     },
     title: {
         color: Colors.white,
@@ -24,7 +22,6 @@ const styles = StyleSheet.create({
     },
     container: {
         alignSelf: 'stretch',
-        justifyContent: 'center',
         backgroundColor: Colors.white,
         height: containerHeight
     },
@@ -69,6 +66,11 @@ const styles = StyleSheet.create({
         marginTop: 15,
         flexDirection: 'row',
         alignSelf: 'flex-end'
+    },
+    todoDescription: {
+        marginTop: 20,
+        marginLeft: 10,
+        marginRight: 10
     }
 });
 
