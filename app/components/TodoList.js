@@ -15,6 +15,7 @@ const rowStyle = (ended) => {
     return ended ? styles.endedTodo : styles.listItemTitle;
 };
 
+
 class TodoListView extends Component {
     constructor(props) {
         super(props);
@@ -28,9 +29,8 @@ class TodoListView extends Component {
         };
     }
 
-    _onPressTodo(rowData) {
-        //Todo: Open a new view to show item
-        //Alert.alert(rowData.title);
+    _onPressTodo(todo) {
+        this.props.navigation.navigate('Detail', {...todo})
     }
 
     _onLongPress(rowData, rowId) {
